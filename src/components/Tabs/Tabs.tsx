@@ -12,12 +12,10 @@ export class Tabs extends React.Component<any, any>{
     }
 
     render() {
-        const panelsJsx = []
-        for( const panel of this.props.panels){
-            panelsJsx.push(<Panel values={panel}/>)
-        }
-        return (
-            panelsJsx
+        return this.panels.map(
+            (panel, id) => {
+                return <Panel values={panel} key={id}/>
+            }
         )
     }
 
